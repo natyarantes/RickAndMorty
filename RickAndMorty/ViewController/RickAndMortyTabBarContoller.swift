@@ -14,7 +14,6 @@ class RickAndMortyTabBarController: UITabBarController {
 
         let vc = ViewController()
         vc.tabBarItem = UITabBarItem(title: "Character", image: UIImage(named: "character_icon_inactive"), selectedImage: UIImage(named: "character_icon_active"))
-        
         self.viewControllers = [vc]
     }
 }
