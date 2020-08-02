@@ -6,7 +6,6 @@
 //  Copyright © 2020 Natália Arantes. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension UIColor {
@@ -14,6 +13,7 @@ extension UIColor {
     @nonobjc class var indigo: UIColor {
         return UIColor(named: "Indigo")!
     }
+    
     //Colors | Graybase
     @nonobjc class var gray1: UIColor {
         return UIColor(named: "Gray 1")!

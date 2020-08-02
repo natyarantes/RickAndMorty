@@ -21,6 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+//    override func didFinishLaunching(_ application: UIApplication) {
+//        super didFinishLaunching()
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let initialViewController = storyboard.instantiateInitialViewController(withIdentifier: "StartViewControler")
+//        self.window?.rootViewController = initialViewController
+//
+//        return true
+//    }
+
     // MARK: UISceneSession Lifecycle
 
 //    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

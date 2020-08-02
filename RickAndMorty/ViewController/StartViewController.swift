@@ -9,37 +9,64 @@
 import UIKit
 
 class StartViewController: UIViewController {
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent // .default
+    }
+    
+    //pixelwolf logo component creation
+    var pwImageView: UIImageView = {
+        let pixelwolf = UIImage(named: "pixelwolf")
+        let pwImageView = UIImageView(image: pixelwolf)
+        pwImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return pwImageView
+    }()
+    
+    func setupPwImageView() {
+        view.addSubview(pwImageView)
+        buildConstraintsPwImageView()
+    }
+    
+    func buildConstraintsPwImageView() {
+        let constraints = [pwImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+                           pwImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)]
+        NSLayoutConstraint.activate(constraints)
+    }
+
+    //rick and morty logo component creation
+    var ramImageView: UIImageView = {
+        let rickandmorty = UIImage(named: "RickAndMorty")
+        let ramImageView = UIImageView(image: rickandmorty)
+        ramImageView.translatesAutoresizingMaskIntoConstraints = false
+
+        return ramImageView
+    }()
+
+    func setupRaMImageView() {
+        view.addSubview(ramImageView)
+        buildConstraintsRaMImageView()
+    }
+
+    func buildConstraintsRaMImageView() {
+        let constraints = [ramImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 170),
+                           ramImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)]
+        NSLayoutConstraint.activate(constraints)
+    }
+
+    //welcome title component creation
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.init(named: "Basic Black")
+        self.view.backgroundColor = .basicblack
 
         //pixelwolf logo
-        let pixelwolf = UIImage(named: "pixelwolf")
-        let pwImageView:UIImageView = UIImageView()
-        pwImageView.center = self.view.center
-
-
-        pwImageView.image = pixelwolf
-        self.view.addSubview(pwImageView)
-
-        pwImageView.translatesAutoresizingMaskIntoConstraints = false
-        pwImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
-        pwImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-//        pwImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-
+        setupPwImageView()
 
         //Rick and Morty logo
-        let rickandmorty = UIImage(named:"RickAndMorty")
-        let ramImageView: UIImageView = UIImageView()
-        ramImageView.center = self.view.center
+        setupRaMImageView()
 
-        ramImageView.image = rickandmorty
-        self.view.addSubview(ramImageView)
-
-        ramImageView.translatesAutoresizingMaskIntoConstraints = false
-        ramImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 170).isActive = true
-        ramImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
 
         //Text welcome title
         let welcomeLabel = UITextField()
@@ -74,9 +101,10 @@ class StartViewController: UIViewController {
         //instructions button
         let instructButton = UIButton(type: .custom)
         instructButton.setTitle("🔗 GET THE INSTRUCTIONS", for: .normal)
-        instructButton.setTitleColor(UIColor.init(named: "Adding"), for: .normal)
+        instructButton.setTitleColor(.adding, for: .normal)
+        instructButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         instructButton.layer.borderWidth = 3
-        instructButton.layer.borderColor = UIColor.white.cgColor
+        instructButton.layer.borderColor = UIColor.adding.cgColor
         instructButton.layer.cornerRadius = 10
         instructButton.contentEdgeInsets = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
 
@@ -93,8 +121,9 @@ class StartViewController: UIViewController {
         //start prototype button
         let prototypeButton = UIButton(type: .custom)
         prototypeButton.setTitle("START PROTOTYPE", for: .normal)
-        prototypeButton.setTitleColor(UIColor.init(named: "Basic Black"), for: .normal)
-        prototypeButton.backgroundColor = UIColor.init(named: "Adding")
+        prototypeButton.setTitleColor(.basicblack, for: .normal)
+        prototypeButton.backgroundColor = .adding
+        prototypeButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         prototypeButton.layer.cornerRadius = 10
         prototypeButton.contentEdgeInsets = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
 
@@ -111,6 +140,7 @@ class StartViewController: UIViewController {
 
     @objc func startPrototype() {
         let rickandmortytab = RickAndMortyTabBarController()
+        rickandmortytab.modalPresentationStyle = .fullScreen
         self.present(rickandmortytab, animated: true, completion: nil)
     }
 }
