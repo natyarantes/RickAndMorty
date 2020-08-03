@@ -10,10 +10,25 @@ import UIKit
 
 class CharacterViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
+    var api = RickAndMortyAPI()
+
+    func characterFetch(){
+        let requestCharacter = CharacterRequest(offset: 0)
+        api.send(apiRequest: requestCharacter) { (result: Result<ResultData<Character>, Error> ) in
+            switch result {
+            case .success(let characters):
+                print(characters.results.first)
+            case .failure(let error):
+                print("")
+            }
+            
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Character"
-
+        characterFetch()
         self.view.backgroundColor = .gray6
 
         //MARK: Filter button
