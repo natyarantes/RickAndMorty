@@ -14,7 +14,7 @@ class StartViewController: UIViewController {
         return .lightContent // .default
     }
     
-    //pixelwolf logo component creation
+    //MARK: pixelwolf logo component creation
     var pwImageView: UIImageView = {
         let pixelwolf = UIImage(named: "pixelwolf")
         let pwImageView = UIImageView(image: pixelwolf)
@@ -34,7 +34,7 @@ class StartViewController: UIViewController {
         NSLayoutConstraint.activate(constraints)
     }
 
-    //rick and morty logo component creation
+    //MARK: rick and morty logo component creation
     var ramImageView: UIImageView = {
         let rickandmorty = UIImage(named: "RickAndMorty")
         let ramImageView = UIImageView(image: rickandmorty)
@@ -54,7 +54,7 @@ class StartViewController: UIViewController {
         NSLayoutConstraint.activate(constraints)
     }
 
-    //welcome title component creation
+    //MARK: welcome title component creation
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +68,7 @@ class StartViewController: UIViewController {
         setupRaMImageView()
 
 
-        //Text welcome title
+        //MARK: Text welcome title
         let welcomeLabel = UITextField()
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
         welcomeLabel.text = "Welcome"
@@ -81,7 +81,7 @@ class StartViewController: UIViewController {
         welcomeLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 320).isActive = true
         welcomeLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
 
-        //Text welcome
+        //MARK: Text welcome
         let wlcmText = UILabel()
         wlcmText.translatesAutoresizingMaskIntoConstraints = false
         wlcmText.text = "In this test, we will assess your ability to build the application through code analysis and reproduction of the following layout."
@@ -98,7 +98,7 @@ class StartViewController: UIViewController {
 
 
 
-        //instructions button
+        //MARK: instructions button
         let instructButton = UIButton(type: .custom)
         instructButton.setTitle("🔗 GET THE INSTRUCTIONS", for: .normal)
         instructButton.setTitleColor(.adding, for: .normal)
