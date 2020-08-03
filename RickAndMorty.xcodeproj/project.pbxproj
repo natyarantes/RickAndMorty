@@ -20,6 +20,7 @@
 		4148212A24D73C77008E635A /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4148212924D73C77008E635A /* CharacterViewController.swift */; };
 		4148212C24D73C8E008E635A /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4148212B24D73C8E008E635A /* LocationViewController.swift */; };
 		4148212E24D73CA1008E635A /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4148212D24D73CA1008E635A /* EpisodeViewController.swift */; };
+		41D77E4A24D8718B00977F77 /* CharacterCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D77E4924D8718B00977F77 /* CharacterCellViewController.swift */; };
 		54081E1424D66502000D454A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54081E1324D66502000D454A /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		4148212924D73C77008E635A /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		4148212B24D73C8E008E635A /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		4148212D24D73CA1008E635A /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
+		41D77E4924D8718B00977F77 /* CharacterCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellViewController.swift; sourceTree = "<group>"; };
 		54081E1324D66502000D454A /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +134,7 @@
 				4148212B24D73C8E008E635A /* LocationViewController.swift */,
 				4148212D24D73CA1008E635A /* EpisodeViewController.swift */,
 				4118205024D4BD4600A8B214 /* StartViewController.swift */,
+				41D77E4924D8718B00977F77 /* CharacterCellViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				4118204F24D4BB1400A8B214 /* RickAndMortyTabBarContoller.swift in Sources */,
 				4116776824D4A9D700F1B1DD /* AppDelegate.swift in Sources */,
 				4148212E24D73CA1008E635A /* EpisodeViewController.swift in Sources */,
+				41D77E4A24D8718B00977F77 /* CharacterCellViewController.swift in Sources */,
 				4148212A24D73C77008E635A /* CharacterViewController.swift in Sources */,
 				4116776A24D4A9D700F1B1DD /* SceneDelegate.swift in Sources */,
 				4148212C24D73C8E008E635A /* LocationViewController.swift in Sources */,
