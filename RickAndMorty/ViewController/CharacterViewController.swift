@@ -49,8 +49,8 @@ class CharacterViewController: UIViewController, UICollectionViewDataSource, UIC
         self.view.addSubview(filterButton)
 
         filterButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([filterButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 90),
-                                       filterButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -30)])
+        NSLayoutConstraint.activate([filterButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+                                       filterButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -20)])
 
         //MARK: Page title
         let characterTitlePage = UILabel()

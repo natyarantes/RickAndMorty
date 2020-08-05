@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,7 @@
 		4148212A24D73C77008E635A /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4148212924D73C77008E635A /* CharacterViewController.swift */; };
 		4148212C24D73C8E008E635A /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4148212B24D73C8E008E635A /* LocationViewController.swift */; };
 		4148212E24D73CA1008E635A /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4148212D24D73CA1008E635A /* EpisodeViewController.swift */; };
+		41B5789724DAE8C9006F96DD /* LocationCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B5789624DAE8C9006F96DD /* LocationCellViewController.swift */; };
 		41D77E4A24D8718B00977F77 /* CharacterCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D77E4924D8718B00977F77 /* CharacterCellViewController.swift */; };
 		41D77E4F24D89D0400977F77 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D77E4E24D89D0400977F77 /* Character.swift */; };
 		41D77E5124D8A1AC00977F77 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D77E5024D8A1AC00977F77 /* Location.swift */; };
@@ -67,6 +68,7 @@
 		4148212924D73C77008E635A /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		4148212B24D73C8E008E635A /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		4148212D24D73CA1008E635A /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
+		41B5789624DAE8C9006F96DD /* LocationCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellViewController.swift; sourceTree = "<group>"; };
 		41D77E4924D8718B00977F77 /* CharacterCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellViewController.swift; sourceTree = "<group>"; };
 		41D77E4E24D89D0400977F77 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		41D77E5024D8A1AC00977F77 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				4118204E24D4BB1400A8B214 /* RickAndMortyTabBarContoller.swift */,
 				4148212924D73C77008E635A /* CharacterViewController.swift */,
 				4148212B24D73C8E008E635A /* LocationViewController.swift */,
+				41B5789624DAE8C9006F96DD /* LocationCellViewController.swift */,
 				4148212D24D73CA1008E635A /* EpisodeViewController.swift */,
 				4118205024D4BD4600A8B214 /* StartViewController.swift */,
 				41D77E4924D8718B00977F77 /* CharacterCellViewController.swift */,
@@ -222,7 +225,6 @@
 				811B30B2D80D068B333F1644 /* Pods-RickAndMortyTests.debug.xcconfig */,
 				1B7251DECD1151036D5C8701 /* Pods-RickAndMortyTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -406,6 +408,7 @@
 				54081E1424D66502000D454A /* UIColor+Extension.swift in Sources */,
 				41D77E5324D8A3C800977F77 /* Episodes.swift in Sources */,
 				41D77E5C24D8A56D00977F77 /* CharacterRequest.swift in Sources */,
+				41B5789724DAE8C9006F96DD /* LocationCellViewController.swift in Sources */,
 				41D77E5A24D8A55600977F77 /* LocationRequest.swift in Sources */,
 				4116776C24D4A9D700F1B1DD /* ViewController.swift in Sources */,
 				41D77E6724D8B51100977F77 /* LocationViewModel.swift in Sources */,
