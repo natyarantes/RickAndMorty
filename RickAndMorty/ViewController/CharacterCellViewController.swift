@@ -43,11 +43,13 @@ class CharacterCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         contentView.addSubview(characterProfilePic)
+        contentView.layer.cornerRadius = 10
+        contentView.clipsToBounds = true
 
         NSLayoutConstraint.activate([characterProfilePic.topAnchor.constraint(equalTo: contentView.topAnchor),
                                      characterProfilePic.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
                                      characterProfilePic.heightAnchor.constraint(equalToConstant: 140),
-                                     characterProfilePic.widthAnchor.constraint(equalToConstant: 180)])
+                                     characterProfilePic.widthAnchor.constraint(equalToConstant: 160)])
 
         contentView.addSubview(characterStatus)
         NSLayoutConstraint.activate([characterStatus.topAnchor.constraint(equalTo: characterProfilePic.bottomAnchor, constant: 12),

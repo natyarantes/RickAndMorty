@@ -10,11 +10,11 @@ import Foundation
 
 struct Location: Decodable {
     let id: Int?
-    let name: String
+    let name: String?
     let typeLocation: String?
     let dimension: String?
     let residents: [URL]?
-    let url: String
+    let url: String?
 
     enum CodingKeys:String, CodingKey{
         case id
