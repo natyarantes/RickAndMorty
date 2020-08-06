@@ -53,8 +53,22 @@ class StartViewController: UIViewController {
                            ramImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)]
         NSLayoutConstraint.activate(constraints)
     }
+    //Welcome info view
+    lazy var welcomeInfoView: UIView = {
+        let welcomeInfo = UIView()
+        welcomeInfo.backgroundColor = .white
 
-    //Welcome title component creation
+        let textInfo = UILabel()
+        textInfo.text = "Rick and Morty is created by Justin Roiland and Dan Harmon for Adult Swim. The data and images are used without claim of ownership and belong to their respective owners."
+        textInfo.textColor = .gray1
+        textInfo.font.withSize(17)
+        textInfo.textAlignment = .justified
+
+        welcomeInfo.addSubview(textInfo)
+
+        return welcomeInfo
+    }()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +80,8 @@ class StartViewController: UIViewController {
 
         //Rick and Morty logo
         setupRaMImageView()
+
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector("welcomeTextInfo"))
 
 
         //Text welcome title
@@ -111,6 +127,7 @@ class StartViewController: UIViewController {
 
         self.view.addSubview(instructButton)
 
+
         instructButton.translatesAutoresizingMaskIntoConstraints = false
         instructButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -150).isActive = true
         instructButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
@@ -145,4 +162,5 @@ class StartViewController: UIViewController {
         
         self.present(navigationController, animated: true, completion: nil)
     }
+
 }

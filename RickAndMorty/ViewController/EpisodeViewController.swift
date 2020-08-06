@@ -33,7 +33,6 @@ class EpisodeViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .gray6
@@ -56,7 +55,7 @@ class EpisodeViewController: UIViewController, UITableViewDataSource, UITableVie
         NSLayoutConstraint.activate([tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 140),
                                      tableView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            tableView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -24)])
+            tableView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor)])
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -78,6 +77,7 @@ class EpisodeViewController: UIViewController, UITableViewDataSource, UITableVie
 
         return episodeCell
     }
+
 
     func setupPageHeaders(){
 

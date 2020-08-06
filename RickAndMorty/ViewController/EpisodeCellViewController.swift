@@ -47,17 +47,17 @@ class EpisodeCell: UITableViewCell {
         contentView.addSubview(episodeTitle)
         contentView.addSubview(episodeAired)
 
-        NSLayoutConstraint.activate([episodeSeason.topAnchor.constraint(equalTo: contentView.topAnchor),
-                                     episodeSeason.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-                                     episodeSeason.widthAnchor.constraint(equalTo: contentView.widthAnchor)])
+        NSLayoutConstraint.activate([episodeSeason.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+                                     episodeSeason.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+                                     episodeSeason.leftAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leftAnchor, constant: 15)])
         
-        NSLayoutConstraint.activate([episodeTitle.topAnchor.constraint(equalTo: episodeSeason.bottomAnchor),
-                                     episodeSeason.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-                                     episodeSeason.widthAnchor.constraint(equalTo: contentView.widthAnchor)])
+        NSLayoutConstraint.activate([episodeTitle.topAnchor.constraint(equalTo: episodeSeason.bottomAnchor, constant: 3),
+                                     episodeSeason.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+                                     episodeTitle.leftAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leftAnchor, constant: 15)])
         
-        NSLayoutConstraint.activate([episodeAired.topAnchor.constraint(equalTo: episodeSeason.bottomAnchor),
-                                     episodeAired.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-                                     episodeAired.widthAnchor.constraint(equalTo: contentView.widthAnchor)])
+        NSLayoutConstraint.activate([episodeAired.topAnchor.constraint(equalTo: episodeSeason.bottomAnchor, constant: 25),
+                                     episodeAired.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+        episodeAired.leftAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leftAnchor, constant: 15)])
 
     }
 

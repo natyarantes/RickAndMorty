@@ -23,6 +23,7 @@
 		4148212E24D73CA1008E635A /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4148212D24D73CA1008E635A /* EpisodeViewController.swift */; };
 		41B5789724DAE8C9006F96DD /* LocationCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B5789624DAE8C9006F96DD /* LocationCellViewController.swift */; };
 		41B5789924DB4080006F96DD /* EpisodeCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B5789824DB4080006F96DD /* EpisodeCellViewController.swift */; };
+		41BBE9DF24DC6EF700437F75 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BBE9DE24DC6EF700437F75 /* ProfileViewController.swift */; };
 		41D77E4A24D8718B00977F77 /* CharacterCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D77E4924D8718B00977F77 /* CharacterCellViewController.swift */; };
 		41D77E4F24D89D0400977F77 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D77E4E24D89D0400977F77 /* Character.swift */; };
 		41D77E5124D8A1AC00977F77 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D77E5024D8A1AC00977F77 /* Location.swift */; };
@@ -71,6 +72,7 @@
 		4148212D24D73CA1008E635A /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
 		41B5789624DAE8C9006F96DD /* LocationCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellViewController.swift; sourceTree = "<group>"; };
 		41B5789824DB4080006F96DD /* EpisodeCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCellViewController.swift; sourceTree = "<group>"; };
+		41BBE9DE24DC6EF700437F75 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		41D77E4924D8718B00977F77 /* CharacterCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellViewController.swift; sourceTree = "<group>"; };
 		41D77E4E24D89D0400977F77 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		41D77E5024D8A1AC00977F77 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -165,14 +167,15 @@
 			isa = PBXGroup;
 			children = (
 				4116776B24D4A9D700F1B1DD /* ViewController.swift */,
+				4118205024D4BD4600A8B214 /* StartViewController.swift */,
 				4118204E24D4BB1400A8B214 /* RickAndMortyTabBarContoller.swift */,
-				4148212924D73C77008E635A /* CharacterViewController.swift */,
 				4148212B24D73C8E008E635A /* LocationViewController.swift */,
 				41B5789624DAE8C9006F96DD /* LocationCellViewController.swift */,
 				41B5789824DB4080006F96DD /* EpisodeCellViewController.swift */,
 				4148212D24D73CA1008E635A /* EpisodeViewController.swift */,
-				4118205024D4BD4600A8B214 /* StartViewController.swift */,
+				4148212924D73C77008E635A /* CharacterViewController.swift */,
 				41D77E4924D8718B00977F77 /* CharacterCellViewController.swift */,
+				41BBE9DE24DC6EF700437F75 /* ProfileViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				41B5789724DAE8C9006F96DD /* LocationCellViewController.swift in Sources */,
 				41D77E5A24D8A55600977F77 /* LocationRequest.swift in Sources */,
 				4116776C24D4A9D700F1B1DD /* ViewController.swift in Sources */,
+				41BBE9DF24DC6EF700437F75 /* ProfileViewController.swift in Sources */,
 				41D77E6724D8B51100977F77 /* LocationViewModel.swift in Sources */,
 				41D77E4F24D89D0400977F77 /* Character.swift in Sources */,
 				41B5789924DB4080006F96DD /* EpisodeCellViewController.swift in Sources */,
