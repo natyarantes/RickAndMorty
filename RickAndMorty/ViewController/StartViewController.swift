@@ -14,7 +14,7 @@ class StartViewController: UIViewController {
         return .lightContent // .default
     }
     
-    //MARK: pixelwolf logo component creation
+    //Pixelwolf logo component creation
     var pwImageView: UIImageView = {
         let pixelwolf = UIImage(named: "pixelwolf")
         let pwImageView = UIImageView(image: pixelwolf)
@@ -34,7 +34,7 @@ class StartViewController: UIViewController {
         NSLayoutConstraint.activate(constraints)
     }
 
-    //MARK: rick and morty logo component creation
+    //Rick and morty logo component creation
     var ramImageView: UIImageView = {
         let rickandmorty = UIImage(named: "RickAndMorty")
         let ramImageView = UIImageView(image: rickandmorty)
@@ -54,7 +54,7 @@ class StartViewController: UIViewController {
         NSLayoutConstraint.activate(constraints)
     }
 
-    //MARK: welcome title component creation
+    //Welcome title component creation
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +68,7 @@ class StartViewController: UIViewController {
         setupRaMImageView()
 
 
-        //MARK: Text welcome title
+        //Text welcome title
         let welcomeLabel = UITextField()
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
         welcomeLabel.text = "Welcome"
@@ -81,7 +81,7 @@ class StartViewController: UIViewController {
         welcomeLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 320).isActive = true
         welcomeLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
 
-        //MARK: Text welcome
+        //Text welcome
         let wlcmText = UILabel()
         wlcmText.translatesAutoresizingMaskIntoConstraints = false
         wlcmText.text = "In this test, we will assess your ability to build the application through code analysis and reproduction of the following layout."
@@ -98,7 +98,7 @@ class StartViewController: UIViewController {
 
 
 
-        //MARK: instructions button
+        //Instructions button
         let instructButton = UIButton(type: .custom)
         instructButton.setTitle("🔗 GET THE INSTRUCTIONS", for: .normal)
         instructButton.setTitleColor(.adding, for: .normal)
@@ -115,7 +115,6 @@ class StartViewController: UIViewController {
         instructButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -150).isActive = true
         instructButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         instructButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -40).isActive = true
-
 
 
         //start prototype button
@@ -140,7 +139,10 @@ class StartViewController: UIViewController {
 
     @objc func startPrototype() {
         let rickandmortytab = RickAndMortyTabBarController()
-        rickandmortytab.modalPresentationStyle = .fullScreen
-        self.present(rickandmortytab, animated: true, completion: nil)
+
+        let navigationController = UINavigationController(rootViewController: rickandmortytab)
+        navigationController.modalPresentationStyle = .fullScreen
+        
+        self.present(navigationController, animated: true, completion: nil)
     }
 }

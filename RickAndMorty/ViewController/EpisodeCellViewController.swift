@@ -47,15 +47,17 @@ class EpisodeCell: UITableViewCell {
         contentView.addSubview(episodeTitle)
         contentView.addSubview(episodeAired)
 
-        NSLayoutConstraint.activate([episodeSeason.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
-                                     episodeSeason.centerXAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.centerXAnchor),
-                                     episodeSeason.widthAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.widthAnchor)])
+        NSLayoutConstraint.activate([episodeSeason.topAnchor.constraint(equalTo: contentView.topAnchor),
+                                     episodeSeason.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+                                     episodeSeason.widthAnchor.constraint(equalTo: contentView.widthAnchor)])
+        
         NSLayoutConstraint.activate([episodeTitle.topAnchor.constraint(equalTo: episodeSeason.bottomAnchor),
-                                     episodeSeason.centerXAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.centerXAnchor),
-                                     episodeSeason.widthAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.widthAnchor)])
+                                     episodeSeason.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+                                     episodeSeason.widthAnchor.constraint(equalTo: contentView.widthAnchor)])
+        
         NSLayoutConstraint.activate([episodeAired.topAnchor.constraint(equalTo: episodeSeason.bottomAnchor),
-                                     episodeAired.centerXAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.centerXAnchor),
-                                     episodeAired.widthAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.widthAnchor)])
+                                     episodeAired.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+                                     episodeAired.widthAnchor.constraint(equalTo: contentView.widthAnchor)])
 
     }
 

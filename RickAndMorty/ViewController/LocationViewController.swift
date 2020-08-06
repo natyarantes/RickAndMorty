@@ -37,20 +37,8 @@ class LocationViewController: UIViewController, UICollectionViewDataSource, UICo
         self.view.backgroundColor = .gray6
         self.title = "Location"
 
-        //MARK: Filter button
-        let filterButton = UIButton()
-        filterButton.setTitle("Filter", for: .normal)
-        filterButton.setTitleColor(.indigo, for: .normal)
-        filterButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
-        filterButton.contentHorizontalAlignment = .right
 
-        self.view.addSubview(filterButton)
-
-        filterButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([filterButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-                                       filterButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -20)])
-
-        //MARK: Page title
+        //Page title
         let locationTitlePage = UILabel()
         locationTitlePage.text = "Location"
         locationTitlePage.textAlignment = .left
@@ -63,7 +51,7 @@ class LocationViewController: UIViewController, UICollectionViewDataSource, UICo
                                              locationTitlePage.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -20)]
         NSLayoutConstraint.activate(locationTitlePageConstraints)
 
-        //MARK: Location collection view
+        //Location collection view
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         layout.itemSize = CGSize(width: 160, height: 80)
@@ -82,7 +70,7 @@ class LocationViewController: UIViewController, UICollectionViewDataSource, UICo
                                      myCollectionView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor)])
 
         collectionViewVar = myCollectionView
-        //MARK: Location fetch and show
+        //Location fetch and show
         locationFetch()
     }
 

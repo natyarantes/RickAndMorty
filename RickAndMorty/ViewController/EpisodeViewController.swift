@@ -21,7 +21,8 @@ class EpisodeViewController: UIViewController, UITableViewDataSource, UITableVie
             switch result {
             case .success(let result):
                 var viewModels = [EpisodeViewModel]()
-                for episode: Episode in result.results as [Episode]{
+                //
+                for episode in result.results as [Episode]{
                     viewModels.append(EpisodeViewModel(episode: episode))
                 }
                 self.episodeViewModel = viewModels
@@ -32,30 +33,35 @@ class EpisodeViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
 
-    func setupTableView(){
-        tableView.backgroundColor = .white
-        view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "episodeCell")
-        NSLayoutConstraint.activate([tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 140),
-                                     tableView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            tableView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -24)])
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .gray6
         self.title = "Episode"
 
+        // Screen setup
         setupPageHeaders()
-        fetchEpisodes()
         setupTableView()
 
+        fetchEpisodes()
+    }
+    func setupTableView(){
+        tableView.backgroundColor = .white
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(EpisodeCell.self, forCellReuseIdentifier: "episodeCell")
+
+        NSLayoutConstraint.activate([tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 140),
+                                     tableView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            tableView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -24)])
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 77
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return episodeViewModel.count
@@ -73,22 +79,7 @@ class EpisodeViewController: UIViewController, UITableViewDataSource, UITableVie
         return episodeCell
     }
 
-    
-
-
     func setupPageHeaders(){
-        //Filter button
-        let filterButton = UIButton()
-        filterButton.setTitle("Filter", for: .normal)
-        filterButton.setTitleColor(.indigo, for: .normal)
-        filterButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
-        filterButton.contentHorizontalAlignment = .right
-
-        self.view.addSubview(filterButton)
-
-        filterButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([filterButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-                                       filterButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -20)])
 
         //Page title
         let locationTitlePage = UILabel()

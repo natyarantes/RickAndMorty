@@ -39,20 +39,7 @@ class CharacterViewController: UIViewController, UICollectionViewDataSource, UIC
 
         self.view.backgroundColor = .gray6
 
-        //MARK: Filter button
-        let filterButton = UIButton()
-        filterButton.setTitle("Filter", for: .normal)
-        filterButton.setTitleColor(.indigo, for: .normal)
-        filterButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
-        filterButton.contentHorizontalAlignment = .right
-
-        self.view.addSubview(filterButton)
-
-        filterButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([filterButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-                                       filterButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -20)])
-
-        //MARK: Page title
+        //Page title
         let characterTitlePage = UILabel()
         characterTitlePage.text = "Character"
         characterTitlePage.textAlignment = .left
@@ -65,7 +52,7 @@ class CharacterViewController: UIViewController, UICollectionViewDataSource, UIC
                                              characterTitlePage.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor)]
         NSLayoutConstraint.activate(characterTitlePageConstraints)
 
-        //MARK: Character collection view
+        //Character collection view
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         layout.itemSize = CGSize(width: 160, height: 219)
@@ -85,13 +72,13 @@ class CharacterViewController: UIViewController, UICollectionViewDataSource, UIC
 
 
         collectionViewVar = myCollectionView
-        //MARK: Character fetch and show
+        //Character fetch and show
         characterFetch()
 
 
     }
 
-    //MARK: Collection view - characters
+    //Collection view - characters
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return characterViewModel.count

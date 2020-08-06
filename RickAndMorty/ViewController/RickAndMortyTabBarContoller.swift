@@ -22,27 +22,46 @@ class RickAndMortyTabBarController: UITabBarController, UITabBarControllerDelega
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        //create tab character
+        // Create tab character
         let tabCharacter = CharacterViewController()
         let tabCharacterBarItem = UITabBarItem(title: "Character", image: UIImage(named: "character_icon_inactive.png"), selectedImage: UIImage(named: "character_icon_active.png"))
 
         tabCharacter.tabBarItem = tabCharacterBarItem
 
-        //create tab location
+        // Create tab location
         let tabLocation = LocationViewController()
         let tabLocationBarItem = UITabBarItem(title: "Location", image: UIImage(named: "location_icon_inactive.png"), selectedImage: UIImage(named: "location_icon_active.png"))
 
         tabLocation.tabBarItem = tabLocationBarItem
 
-        //create tab episode
+        // Create tab episode
         let tabEpisode = EpisodeViewController()
         let tabEpisodeBarItem = UITabBarItem(title: "Episode", image: UIImage(named: "episodes_icon_inactive.png"), selectedImage: UIImage(named: "episodes_icon_active.png"))
 
         tabEpisode.tabBarItem = tabEpisodeBarItem
 
         self.viewControllers = [tabCharacter, tabLocation, tabEpisode]
+        
+        setupNavigationBar()
     }
-    //UITabBarControllerDelegate method
+    
+    func setupNavigationBar() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter",
+                                                                style: UIBarButtonItem.Style.done,
+                                                                target: self, action: #selector(didPressedFilter))
+        self.navigationController?.navigationBar.tintColor = .indigo
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17)]
+
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+    }
+    
+    @objc func didPressedFilter() {
+        print("Did pressed filter")
+    }
+
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         print("Selected \(viewController.title!)")
     }

@@ -11,25 +11,33 @@ import Foundation
 class EpisodeViewModel {
 
     private let episode: Episode
-    init(episode: Episode) {
-        self.episode = episode
-    }
+    
     var id: Int {
         return episode.id
     }
+    
     var name: String {
         return episode.name
     }
+    
     var airDate: String {
         return episode.airDate
     }
+    
     var episodes: String {
         return episode.episode
     }
+    
     var characters: [URL] {
         return episode.characters
     }
+    
     var url: URL {
         return episode.url
     }
+    
+    init(episode: Episode) {
+        self.episode = episode
+    }
+    
 }
