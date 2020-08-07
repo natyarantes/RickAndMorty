@@ -126,6 +126,19 @@ class StartViewController: UIViewController {
 
         //Rick and Morty logo
         setupRaMImageView()
+        let textInfo = UILabel()
+        textInfo.text = "Rick and Morty is created by Justin Roiland and Dan Harmon for Adult Swim. The data and images are used without claim of ownership and belong to their respective owners."
+        textInfo.textColor = .gray1
+        textInfo.font.withSize(17)
+        textInfo.textAlignment = .left
+        textInfo.numberOfLines = 5
+        textInfo.translatesAutoresizingMaskIntoConstraints = false
+
+        slideUpView.addSubview(textInfo)
+        NSLayoutConstraint.activate([textInfo.widthAnchor.constraint(equalTo: slideUpView.widthAnchor, constant: -30),
+                                     textInfo.centerXAnchor.constraint(equalTo: slideUpView.centerXAnchor),
+                                     textInfo.centerYAnchor.constraint(equalTo: slideUpView.centerYAnchor)])
+
 
         //Text welcome
         textWelcomeSetup()
@@ -154,19 +167,11 @@ class StartViewController: UIViewController {
 
     //Welcome info view
     var containerView = UIView()
-    let slideUpViewHeight: CGFloat = 300
+    let slideUpViewHeight: CGFloat = 200
     var slideUpView: UIView = {
         let welcomeInfo = UIView()
         welcomeInfo.backgroundColor = .white
 
-        let textInfo = UILabel()
-        textInfo.text = "Rick and Morty is created by Justin Roiland and Dan Harmon for Adult Swim. The data and images are used without claim of ownership and belong to their respective owners."
-        textInfo.textColor = .gray1
-        textInfo.font.withSize(17)
-        textInfo.textAlignment = .justified
-        textInfo.translatesAutoresizingMaskIntoConstraints = false
-
-        welcomeInfo.addSubview(textInfo)
 
         return welcomeInfo
     }()
@@ -179,7 +184,7 @@ class StartViewController: UIViewController {
 
         window?.addSubview(containerView)
 
-        slideUpView.frame = CGRect(x: 0, y: view.frame.size.height, width: screenSize.width, height: slideUpViewHeight)
+        slideUpView.frame = CGRect(x: 10, y: view.frame.size.height, width: screenSize.width, height: slideUpViewHeight)
         window?.addSubview(slideUpView)
 
         containerView.alpha = 0
