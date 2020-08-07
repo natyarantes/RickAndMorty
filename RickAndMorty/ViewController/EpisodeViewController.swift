@@ -52,7 +52,7 @@ class EpisodeViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.delegate = self
         tableView.register(EpisodeCell.self, forCellReuseIdentifier: "episodeCell")
 
-        NSLayoutConstraint.activate([tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 140),
+        NSLayoutConstraint.activate([tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 110),
                                      tableView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             tableView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor)])
