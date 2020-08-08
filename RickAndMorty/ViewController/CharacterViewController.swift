@@ -72,6 +72,9 @@ class CharacterViewController: UIViewController, UICollectionViewDataSource, UIC
 
 
         collectionViewVar = myCollectionView
+
+
+
         //Character fetch and show
         characterFetch()
 
@@ -99,6 +102,15 @@ class CharacterViewController: UIViewController, UICollectionViewDataSource, UIC
 
         myCell.characterProfilePic.sd_setImage(with: characterViewModel[indexPath.row].image, placeholderImage: UIImage(named: "profilepic"))
 
+
+
+
         return myCell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let profileViewController = ProfileViewController()
+        profileViewController.characterViewModel = self.characterViewModel[indexPath.row]
+        self.navigationController?.pushViewController(profileViewController, animated: true)
     }
 }
