@@ -26,6 +26,7 @@
 		41BBE9DF24DC6EF700437F75 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BBE9DE24DC6EF700437F75 /* ProfileViewController.swift */; };
 		41BBEA0724DCF1D900437F75 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BBEA0624DCF1D800437F75 /* FilterViewController.swift */; };
 		41BBEA0B24DF622000437F75 /* ProfileCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BBEA0A24DF622000437F75 /* ProfileCellViewController.swift */; };
+		41BBEA0D24E06F5000437F75 /* FilterCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BBEA0C24E06F5000437F75 /* FilterCellViewController.swift */; };
 		41D77E4A24D8718B00977F77 /* CharacterCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D77E4924D8718B00977F77 /* CharacterCellViewController.swift */; };
 		41D77E4F24D89D0400977F77 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D77E4E24D89D0400977F77 /* Character.swift */; };
 		41D77E5124D8A1AC00977F77 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D77E5024D8A1AC00977F77 /* Location.swift */; };
@@ -77,6 +78,7 @@
 		41BBE9DE24DC6EF700437F75 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		41BBEA0624DCF1D800437F75 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		41BBEA0A24DF622000437F75 /* ProfileCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCellViewController.swift; sourceTree = "<group>"; };
+		41BBEA0C24E06F5000437F75 /* FilterCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCellViewController.swift; sourceTree = "<group>"; };
 		41D77E4924D8718B00977F77 /* CharacterCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellViewController.swift; sourceTree = "<group>"; };
 		41D77E4E24D89D0400977F77 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		41D77E5024D8A1AC00977F77 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				4116776B24D4A9D700F1B1DD /* ViewController.swift */,
 				4118205024D4BD4600A8B214 /* StartViewController.swift */,
 				41BBEA0624DCF1D800437F75 /* FilterViewController.swift */,
+				41BBEA0C24E06F5000437F75 /* FilterCellViewController.swift */,
 				4118204E24D4BB1400A8B214 /* RickAndMortyTabBarContoller.swift */,
 				4148212B24D73C8E008E635A /* LocationViewController.swift */,
 				41B5789624DAE8C9006F96DD /* LocationCellViewController.swift */,
@@ -436,6 +439,7 @@
 				41D77E4A24D8718B00977F77 /* CharacterCellViewController.swift in Sources */,
 				41D77E6924D8BC6400977F77 /* InfoResponse.swift in Sources */,
 				4148212A24D73C77008E635A /* CharacterViewController.swift in Sources */,
+				41BBEA0D24E06F5000437F75 /* FilterCellViewController.swift in Sources */,
 				4116776A24D4A9D700F1B1DD /* SceneDelegate.swift in Sources */,
 				4148212C24D73C8E008E635A /* LocationViewController.swift in Sources */,
 				41D77E5624D8A52700977F77 /* RickAndMortyAPI.swift in Sources */,

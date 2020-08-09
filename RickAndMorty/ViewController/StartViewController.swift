@@ -165,7 +165,7 @@ class StartViewController: UIViewController {
         self.present(navigationController, animated: true, completion: nil)
     }
 
-    //Welcome info view
+    //welcome info
     var containerView = UIView()
     let slideUpViewHeight: CGFloat = 200
     var slideUpView: UIView = {
@@ -175,6 +175,7 @@ class StartViewController: UIViewController {
 
         return welcomeInfo
     }()
+
 
     @objc func buttonTapped(_ sender: UIButton) {
         let window = self.view

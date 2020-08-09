@@ -12,7 +12,6 @@ import SDWebImage
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var characterViewModel: CharacterViewModel?
-    var locationViewModel: LocationViewModel?
     let informationTableView = UITableView()
 
     func setHeader() {
