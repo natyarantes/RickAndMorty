@@ -48,7 +48,8 @@ class LocationViewController: UIViewController, UICollectionViewDataSource, UICo
         self.view.addSubview(locationTitlePage)
 
         let locationTitlePageConstraints = [locationTitlePage.topAnchor.constraint(equalTo: view.topAnchor, constant: 110),
-                                             locationTitlePage.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -20)]
+                                             locationTitlePage.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -20),
+                                             locationTitlePage.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 15)]
         NSLayoutConstraint.activate(locationTitlePageConstraints)
 
         //Location collection view
@@ -91,5 +92,10 @@ class LocationViewController: UIViewController, UICollectionViewDataSource, UICo
         locationCell.dimension.text = locationViewModel[indexPath.row].name
 
         return locationCell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailedLocationViewController = DetailedLocationViewController()
+        detailedLocationViewController.locationViewModel = self.locationViewModel[indexPath.row]
+        self.navigationController?.pushViewController(detailedLocationViewController, animated: true)
     }
 }

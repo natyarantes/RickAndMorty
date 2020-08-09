@@ -17,6 +17,7 @@
 		4116777F24D4A9DC00F1B1DD /* RickAndMortyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4116777E24D4A9DC00F1B1DD /* RickAndMortyTests.swift */; };
 		4118204F24D4BB1400A8B214 /* RickAndMortyTabBarContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4118204E24D4BB1400A8B214 /* RickAndMortyTabBarContoller.swift */; };
 		4118205124D4BD4600A8B214 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4118205024D4BD4600A8B214 /* StartViewController.swift */; };
+		413A50F824E08E3C00CFC8AF /* DetailedEpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A50F724E08E3C00CFC8AF /* DetailedEpisodeViewController.swift */; };
 		4148212A24D73C77008E635A /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4148212924D73C77008E635A /* CharacterViewController.swift */; };
 		4148212C24D73C8E008E635A /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4148212B24D73C8E008E635A /* LocationViewController.swift */; };
 		4148212E24D73CA1008E635A /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4148212D24D73CA1008E635A /* EpisodeViewController.swift */; };
@@ -69,6 +70,7 @@
 		4116778024D4A9DC00F1B1DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4118204E24D4BB1400A8B214 /* RickAndMortyTabBarContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyTabBarContoller.swift; sourceTree = "<group>"; };
 		4118205024D4BD4600A8B214 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		413A50F724E08E3C00CFC8AF /* DetailedEpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedEpisodeViewController.swift; sourceTree = "<group>"; };
 		4148212924D73C77008E635A /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		4148212B24D73C8E008E635A /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		4148212D24D73CA1008E635A /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
@@ -181,12 +183,20 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		413A50F624E08E0600CFC8AF /* Detailed Episode */ = {
+			isa = PBXGroup;
+			children = (
+				413A50F724E08E3C00CFC8AF /* DetailedEpisodeViewController.swift */,
+			);
+			path = "Detailed Episode";
+			sourceTree = "<group>";
+		};
 		41BBEA1024E07E9A00437F75 /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				41BBEA1524E0811D00437F75 /* Detailed Location */,
 				4148212B24D73C8E008E635A /* LocationViewController.swift */,
 				41B5789624DAE8C9006F96DD /* LocationCellViewController.swift */,
-				41BBEA0E24E07E3400437F75 /* DetailedLocationViewController.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -194,6 +204,7 @@
 		41BBEA1124E07EA300437F75 /* Episode */ = {
 			isa = PBXGroup;
 			children = (
+				413A50F624E08E0600CFC8AF /* Detailed Episode */,
 				41B5789824DB4080006F96DD /* EpisodeCellViewController.swift */,
 				4148212D24D73CA1008E635A /* EpisodeViewController.swift */,
 			);
@@ -227,6 +238,14 @@
 				41BBEA0C24E06F5000437F75 /* FilterCellViewController.swift */,
 			);
 			path = "Character Filter";
+			sourceTree = "<group>";
+		};
+		41BBEA1524E0811D00437F75 /* Detailed Location */ = {
+			isa = PBXGroup;
+			children = (
+				41BBEA0E24E07E3400437F75 /* DetailedLocationViewController.swift */,
+			);
+			path = "Detailed Location";
 			sourceTree = "<group>";
 		};
 		41D77E4D24D8897800977F77 /* Model */ = {
@@ -474,6 +493,7 @@
 				4116776824D4A9D700F1B1DD /* AppDelegate.swift in Sources */,
 				41D77E6024D8AB1300977F77 /* APIInterface.swift in Sources */,
 				4148212E24D73CA1008E635A /* EpisodeViewController.swift in Sources */,
+				413A50F824E08E3C00CFC8AF /* DetailedEpisodeViewController.swift in Sources */,
 				41BBEA0724DCF1D900437F75 /* FilterViewController.swift in Sources */,
 				41BBEA0B24DF622000437F75 /* ProfileCellViewController.swift in Sources */,
 				41D77E4A24D8718B00977F77 /* CharacterCellViewController.swift in Sources */,

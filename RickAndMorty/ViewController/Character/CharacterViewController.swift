@@ -49,7 +49,8 @@ class CharacterViewController: UIViewController, UICollectionViewDataSource, UIC
         self.view.addSubview(characterTitlePage)
 
         let characterTitlePageConstraints = [characterTitlePage.topAnchor.constraint(equalTo: view.topAnchor, constant: 110),
-                                             characterTitlePage.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor)]
+                                             characterTitlePage.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor),
+                                             characterTitlePage.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 15)]
         NSLayoutConstraint.activate(characterTitlePageConstraints)
 
         //Character collection view

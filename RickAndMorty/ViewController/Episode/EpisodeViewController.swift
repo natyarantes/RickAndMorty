@@ -77,21 +77,27 @@ class EpisodeViewController: UIViewController, UITableViewDataSource, UITableVie
 
         return episodeCell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailedEpisodeViewController = DetailedEpisodeViewController()
+        detailedEpisodeViewController.episodeViewModel = self.episodeViewModel[indexPath.row]
+        self.navigationController?.pushViewController(detailedEpisodeViewController, animated: true)
+    }
 
 
     func setupPageHeaders(){
 
         //Page title
-        let locationTitlePage = UILabel()
-        locationTitlePage.text = "Episode"
-        locationTitlePage.textAlignment = .left
-        locationTitlePage.font = UIFont.boldSystemFont(ofSize: 34)
-        locationTitlePage.textColor = .basicblack
-        locationTitlePage.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(locationTitlePage)
+        let episodeTitlePage = UILabel()
+        episodeTitlePage.text = "Episode"
+        episodeTitlePage.textAlignment = .left
+        episodeTitlePage.font = UIFont.boldSystemFont(ofSize: 34)
+        episodeTitlePage.textColor = .basicblack
+        episodeTitlePage.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(episodeTitlePage)
 
-        let locationTitlePageConstraints = [locationTitlePage.topAnchor.constraint(equalTo: view.topAnchor, constant: 110),
-                                             locationTitlePage.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -20)]
+        let locationTitlePageConstraints = [episodeTitlePage.topAnchor.constraint(equalTo: view.topAnchor, constant: 110),
+                                            episodeTitlePage.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -20),
+                                            episodeTitlePage.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 15)]
         NSLayoutConstraint.activate(locationTitlePageConstraints)
     }
 
