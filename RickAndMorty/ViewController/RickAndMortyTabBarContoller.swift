@@ -57,9 +57,38 @@ class RickAndMortyTabBarController: UITabBarController, UITabBarControllerDelega
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
     }
+
+    //Welcome info view
+    var containerView = UIView()
+    let slideUpViewHeight: CGFloat = 800
+    var filterUpView: UIView = {
+        let filterView = UIView()
+        filterView.backgroundColor = .white
+
+
+        return filterView
+    }()
     
     @objc func didPressedFilter() {
         print("Did pressed filter")
+
+        let window = self.view
+        let screenSize = UIScreen.main.bounds.size
+        containerView.backgroundColor = UIColor.black.withAlphaComponent(0.9)
+        containerView.frame = self.view.frame
+
+        window?.addSubview(containerView)
+
+        filterUpView.frame = CGRect(x: 10, y: view.frame.size.height, width: screenSize.width, height: slideUpViewHeight)
+        window?.addSubview(filterUpView)
+
+        containerView.alpha = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       options: .curveEaseInOut, animations: {
+                        self.containerView.alpha = 0.8
+                        self.filterUpView.frame = CGRect(x: 0, y: self.view.frame.size.height - self.slideUpViewHeight, width: screenSize.width, height: self.slideUpViewHeight)
+        }, completion: nil)
     }
 
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
