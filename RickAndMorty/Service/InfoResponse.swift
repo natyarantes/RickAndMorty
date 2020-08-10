@@ -10,7 +10,7 @@ import Foundation
 
 struct InfoResponse: Decodable {
     var count: Int
-    var next: URL
+    var next: URL?
     var pages: Int
     var prev: URL?
 }

@@ -21,7 +21,6 @@ class DetailedLocationViewController: UIViewController, UICollectionViewDataSour
             let id = character.lastPathComponent
             characterIds.append(id)
         }
-        print(characterIds)
         return characterIds
     }
     

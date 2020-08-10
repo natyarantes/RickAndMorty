@@ -13,9 +13,25 @@ class CharacterRequest: APIRequest {
     var path: String
     var parameters: [String : String]
 
-    init(offset: Int) {
+    init(characterFilter: CharacterFilter?) {
         self.method = .GET
         self.path = "/character/"
         self.parameters = [:]
+
+        if !(characterFilter?.selectedName?.isEmpty ?? true) {
+            parameters["name"] = characterFilter?.selectedName
+        }
+
+        if !(characterFilter?.selectedSpecies?.isEmpty ?? true) {
+            parameters["species"] = characterFilter?.selectedSpecies
+        }
+
+        if !(characterFilter?.selectedStatus?.isEmpty ?? true) {
+            parameters["status"] = characterFilter?.selectedStatus
+        }
+
+        if !(characterFilter?.selectedGender?.isEmpty ?? true) {
+            parameters["gender"] = characterFilter?.selectedGender
+        }
     }
 }

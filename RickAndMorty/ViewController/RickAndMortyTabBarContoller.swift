@@ -58,13 +58,25 @@ class RickAndMortyTabBarController: UITabBarController, UITabBarControllerDelega
         self.navigationController?.view.backgroundColor = .clear
     }
 
-    var filterViewController = FilterViewController()
     @objc func didPressedFilter() {
-        print("Did pressed filter")
-        self.present(filterViewController, animated: true, completion: nil)
+        let filterViewController = FilterViewController()
+        filterViewController.delegate = self
+        let navigationController = UINavigationController(rootViewController: filterViewController)
+
+        self.present(navigationController, animated: true, completion: nil)
     }
 
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        print("Selected \(viewController.title!)")
+    
+
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) { }
+}
+
+extension RickAndMortyTabBarController: CharacterFilterDelegate {
+    func didFilter(characterFilter: CharacterFilter) {
+        let characterViewController = self.viewControllers![0] as? CharacterViewController
+
+        characterViewController?.characterFetch(characterFilter)
     }
+
+
 }

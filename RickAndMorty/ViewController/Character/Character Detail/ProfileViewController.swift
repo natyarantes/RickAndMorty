@@ -12,8 +12,37 @@ import SDWebImage
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var characterViewModel: CharacterViewModel?
-    let informationTableView = UITableView()
+    var episodeViewModel: [EpisodeViewModel] = []
+    let informationTableView = UITableView(frame: CGRect.zero, style: UITableView.Style.grouped)
 
+    var api = RickAndMortyAPI()
+
+    func getEpisodeId(episodes: [URL]) -> [String] {
+        var episodeIds: [String] = []
+        for episode in episodes {
+            let id = episode.lastPathComponent
+            episodeIds.append(id)
+        }
+        return episodeIds
+    }
+
+    func episodeFetch(episodeIds: [String]){
+        let requestEpisode = EpisodeRequestById(offset: 0, ids: episodeIds)
+        api.send(apiRequest: requestEpisode) { (result: Result<Array<Episode>, Error> ) in
+            switch result {
+            case .success(let result):
+                var viewModels = [EpisodeViewModel]()
+                for episode: Episode in result as [Episode]{
+                    viewModels.append(EpisodeViewModel(episode: episode))
+                }
+                self.episodeViewModel = viewModels
+                self.informationTableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    let species = UILabel()
     func setHeader() {
 
         //        Title
@@ -83,7 +112,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                                      nameTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor)])
 
         //        Species
-        let species = UILabel()
+
         species.text = characterViewModel?.species
         species.textAlignment = .center
         species.textColor = .gray1
@@ -99,11 +128,9 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     func setupInformationsTableView() {
         informationTableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(informationTableView)
-        informationTableView.translatesAutoresizingMaskIntoConstraints = false
 
-        NSLayoutConstraint.activate([informationTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 400),
-                                     informationTableView.widthAnchor.constraint(equalTo: view.widthAnchor),
-                                     informationTableView.heightAnchor.constraint(equalTo: view.heightAnchor)])
+
+
         informationTableView.register(ProfileCell.self, forCellReuseIdentifier: "characterInfoCell")
         informationTableView.delegate = self
         informationTableView.dataSource = self
@@ -118,6 +145,15 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         setHeader()
 
         setupInformationsTableView()
+        //Constraints tableView
+        NSLayoutConstraint.activate([informationTableView.topAnchor.constraint(equalTo: species.bottomAnchor, constant: 10),
+                                     informationTableView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor),
+                                     informationTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                                     informationTableView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)])
+
+        //Populate episode section
+        let episodeIds = getEpisodeId(episodes: characterViewModel!.episode)
+        episodeFetch(episodeIds: episodeIds)
 
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -125,52 +161,45 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return infoRequired.count
+        switch section {
+        case 0:
+            return infoRequired.count
+        case 1:
+            return episodeViewModel.count
+        default:
+            return 4
+        }
+
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        2
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
-        //Section information
-        let headerInfoView = UIView()
-        let headerInfoCell = tableView.dequeueReusableCell(withIdentifier: "characterInfoCell") as! ProfileCell
-        let headerInfoLabel = UILabel()
-        headerInfoLabel.text = "Information"
-        headerInfoLabel.textAlignment = .left
-        headerInfoLabel.textColor = .gray1
-        headerInfoLabel.font = UIFont.boldSystemFont(ofSize: 20)
-        headerInfoLabel.translatesAutoresizingMaskIntoConstraints = false
+        let headerView = UIView()
+        headerView.backgroundColor = .white
+        let headerCell = tableView.dequeueReusableCell(withIdentifier: "characterInfoCell") as! ProfileCell
+        let headerLabel = UILabel()
+        headerLabel.textAlignment = .left
+        headerLabel.textColor = .gray1
+        headerLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        headerLabel.translatesAutoresizingMaskIntoConstraints = false
 
-        headerInfoView.addSubview(headerInfoCell)
-        headerInfoView.addSubview(headerInfoLabel)
+        headerView.addSubview(headerCell)
+        headerView.addSubview(headerLabel)
 
-        NSLayoutConstraint.activate([headerInfoLabel.topAnchor.constraint(equalTo: headerInfoView.topAnchor),
-                                     headerInfoLabel.widthAnchor.constraint(equalTo: headerInfoView.widthAnchor),
-                                     headerInfoLabel.centerYAnchor.constraint(equalTo: headerInfoView.centerYAnchor),
-                                     headerInfoLabel.centerXAnchor.constraint(equalTo: headerInfoView.centerXAnchor, constant: 20)])
+        NSLayoutConstraint.activate([headerLabel.topAnchor.constraint(equalTo: headerView.topAnchor),
+                                     headerLabel.widthAnchor.constraint(equalTo: headerView.widthAnchor),
+                                     headerLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
+                                     headerLabel.centerXAnchor.constraint(equalTo: headerView.centerXAnchor, constant: 20)])
 
-        //Section Episodes
-        let headerEpisodeView = UIView()
-        let headerEpisodeCell = tableView.dequeueReusableCell(withIdentifier: "characterInfoCell") as! ProfileCell
-        let headerEpisodeLabel = UILabel()
-        headerEpisodeLabel.text = "Information"
-        headerEpisodeLabel.textAlignment = .left
-        headerEpisodeLabel.textColor = .gray1
-        headerEpisodeLabel.font = UIFont.boldSystemFont(ofSize: 20)
-        headerEpisodeLabel.translatesAutoresizingMaskIntoConstraints = false
-
-        headerEpisodeView.addSubview(headerEpisodeCell)
-        headerEpisodeView.addSubview(headerEpisodeLabel)
-
-        NSLayoutConstraint.activate([headerEpisodeLabel.topAnchor.constraint(equalTo: headerEpisodeView.topAnchor),
-                                     headerEpisodeLabel.widthAnchor.constraint(equalTo: headerEpisodeView.widthAnchor),
-                                     headerEpisodeLabel.centerYAnchor.constraint(equalTo: headerEpisodeView.centerYAnchor),
-                                     headerEpisodeLabel.centerXAnchor.constraint(equalTo: headerEpisodeView.centerXAnchor, constant: 20)])
-
-
-        switch section {
-        case 0: return headerInfoView
-        case 1: return headerEpisodeView
-        default: return nil
+        if section == 0 {
+            headerLabel.text = "Information"
         }
+        else {
+            headerLabel.text = "Episodes"
+        }
+        return headerView
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         77
@@ -181,20 +210,26 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             return UITableViewCell()
         }
 
-        characterInfoCell.title.text = infoRequired[indexPath.row]
-
-        let infoIndex = indexPath.row
-        switch infoIndex {
-        case 0:
-            characterInfoCell.subtitle.text = characterViewModel?.gender
-        case 1:
-            characterInfoCell.subtitle.text = characterViewModel?.origin
-        case 2:
-            characterInfoCell.subtitle.text = characterViewModel?.typeSpecies
-        case 3:
-            characterInfoCell.subtitle.text = characterViewModel?.location
-        default:
-            characterInfoCell.subtitle.text = "Not available"
+        if indexPath.section == 0 {
+            characterInfoCell.title.text = infoRequired[indexPath.row]
+            let infoIndex = indexPath.row
+            switch infoIndex {
+            case 0:
+                characterInfoCell.subtitle.text = characterViewModel?.gender
+            case 1:
+                characterInfoCell.subtitle.text = characterViewModel?.origin
+            case 2:
+                characterInfoCell.subtitle.text = characterViewModel?.typeSpecies
+            case 3:
+                characterInfoCell.subtitle.text = characterViewModel?.location
+                characterInfoCell.accessoryType = .disclosureIndicator
+            default:
+                characterInfoCell.subtitle.text = "Not available"
+            }
+        } else {
+            characterInfoCell.episodeSeason.text = episodeViewModel[indexPath.row].episodes
+            characterInfoCell.episodeTitle.text = episodeViewModel[indexPath.row].name
+            characterInfoCell.episodeAired.text = episodeViewModel[indexPath.row].airDate
         }
 
         return characterInfoCell

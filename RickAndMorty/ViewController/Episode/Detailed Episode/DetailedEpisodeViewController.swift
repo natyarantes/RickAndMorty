@@ -21,7 +21,6 @@ class DetailedEpisodeViewController: UIViewController, UICollectionViewDataSourc
             let id = character.lastPathComponent
             characterIds.append(id)
         }
-        print(characterIds)
         return characterIds
     }
 

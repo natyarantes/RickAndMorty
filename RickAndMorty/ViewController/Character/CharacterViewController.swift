@@ -14,11 +14,13 @@ class CharacterViewController: UIViewController, UICollectionViewDataSource, UIC
     var api = RickAndMortyAPI()
     
     var collectionViewVar: UICollectionView?
-    
+    var currentFilter: CharacterFilter?
     var characterViewModel: [CharacterViewModel] = []
     
-    func characterFetch(){
-        let requestCharacter = CharacterRequest(offset: 0)
+    func characterFetch(_ characterFilter: CharacterFilter? = nil){
+        self.currentFilter = characterFilter
+
+        let requestCharacter = CharacterRequest(characterFilter: characterFilter)
         api.send(apiRequest: requestCharacter) { (result: Result<ResultData<Character>, Error> ) in
             switch result {
             case .success(let result):
@@ -70,8 +72,7 @@ class CharacterViewController: UIViewController, UICollectionViewDataSource, UIC
         NSLayoutConstraint.activate([myCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 160),
                                      myCollectionView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
                                      myCollectionView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor),
-                                     myCollectionView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor),
-                                     myCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30)])
+                                     myCollectionView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor)])
         
         
         collectionViewVar = myCollectionView

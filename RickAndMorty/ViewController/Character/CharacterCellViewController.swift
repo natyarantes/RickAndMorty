@@ -40,6 +40,7 @@ class CharacterCell: UICollectionViewCell {
         return characterNameLabel
     }()
 
+
     override init(frame: CGRect) {
         super.init(frame: .zero)
         contentView.addSubview(characterProfilePic)
@@ -60,6 +61,7 @@ class CharacterCell: UICollectionViewCell {
         NSLayoutConstraint.activate([characterName.topAnchor.constraint(equalTo: characterStatus.bottomAnchor, constant: 2),
                                      characterName.widthAnchor.constraint(equalTo: contentView.widthAnchor, constant: -24),
                                      characterName.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)])
+
 
     }
 
