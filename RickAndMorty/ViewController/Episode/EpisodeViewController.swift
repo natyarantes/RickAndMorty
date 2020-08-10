@@ -15,6 +15,9 @@ class EpisodeViewController: UIViewController, UITableViewDataSource, UITableVie
 
     let tableView = UITableView()
 
+    
+
+    //Request episodes from api
     func fetchEpisodes() {
         let requestEpisodes = EpisodeRequest(offset: 0)
         api.send(apiRequest: requestEpisodes) { (result: Result<ResultData<Episode>, Error>) in
@@ -44,6 +47,8 @@ class EpisodeViewController: UIViewController, UITableViewDataSource, UITableVie
 
         fetchEpisodes()
     }
+
+    //Table View setup
     func setupTableView(){
         tableView.backgroundColor = .white
         view.addSubview(tableView)
@@ -71,9 +76,12 @@ class EpisodeViewController: UIViewController, UITableViewDataSource, UITableVie
             return UITableViewCell()
         }
 
+
         episodeCell.episodeSeason.text = episodeViewModel[indexPath.row].episodes
         episodeCell.episodeTitle.text = episodeViewModel[indexPath.row].name
         episodeCell.episodeAired.text = episodeViewModel[indexPath.row].airDate
+
+        episodeCell.accessoryType = .disclosureIndicator
 
         return episodeCell
     }
@@ -83,7 +91,7 @@ class EpisodeViewController: UIViewController, UITableViewDataSource, UITableVie
         self.navigationController?.pushViewController(detailedEpisodeViewController, animated: true)
     }
 
-
+    //Page header setup
     func setupPageHeaders(){
 
         //Page title

@@ -41,6 +41,7 @@ class EpisodeCell: UITableViewCell {
         return episodeAiredLabel
     }()
 
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: "episodeCell")
         contentView.addSubview(episodeSeason)

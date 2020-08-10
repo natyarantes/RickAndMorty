@@ -39,22 +39,22 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                                      characterBg.widthAnchor.constraint(equalTo: view.widthAnchor   )])
 
         //        Profile image
-        //        let profileImg = characterViewModel?.image
-        let profilePicImage = "profilepic.png"
-        let imageProfile = UIImage(named: profilePicImage)
-        let profilePicView = UIImageView(image: imageProfile)
-        profilePicView.layer.borderWidth = 5
-        profilePicView.layer.masksToBounds = false
-        profilePicView.layer.borderColor = UIColor.white.cgColor
-        profilePicView.frame.size.width = 130
-        profilePicView.frame.size.height = 130
-        profilePicView.layer.cornerRadius = 80
-        profilePicView.clipsToBounds = true
-        profilePicView.translatesAutoresizingMaskIntoConstraints = false
+        let profilePicImage = UIImageView()
+        profilePicImage.sd_setImage(with: characterViewModel?.image, placeholderImage: UIImage(named: "profilepic"))
 
-        characterBg.addSubview(profilePicView)
-        NSLayoutConstraint.activate([profilePicView.topAnchor.constraint(equalTo: characterBg.topAnchor, constant: 20),
-                                     profilePicView.centerXAnchor.constraint(equalTo: characterBg.centerXAnchor)])
+        profilePicImage.layer.borderWidth = 5
+        profilePicImage.layer.masksToBounds = false
+        profilePicImage.layer.borderColor = UIColor.white.cgColor
+        profilePicImage.frame.size = CGSize(width: 130, height: 130)
+        profilePicImage.layer.cornerRadius = profilePicImage.frame.size.height/2
+        profilePicImage.clipsToBounds = true
+        profilePicImage.translatesAutoresizingMaskIntoConstraints = false
+
+        characterBg.addSubview(profilePicImage)
+        NSLayoutConstraint.activate([profilePicImage.topAnchor.constraint(equalTo: characterBg.topAnchor, constant: 20),
+                                     profilePicImage.centerXAnchor.constraint(equalTo: characterBg.centerXAnchor),
+                                     profilePicImage.widthAnchor.constraint(equalToConstant: 130),
+                                     profilePicImage.heightAnchor.constraint(equalToConstant: 130)])
 
 
         //        Status
@@ -67,7 +67,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         characterStatus.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(characterStatus)
 
-        NSLayoutConstraint.activate([characterStatus.topAnchor.constraint(equalTo: profilePicView.bottomAnchor, constant: 30),
+        NSLayoutConstraint.activate([characterStatus.topAnchor.constraint(equalTo: profilePicImage.bottomAnchor, constant: 30),
                                      characterStatus.centerXAnchor.constraint(equalTo: view.centerXAnchor)])
 
         //        Character title
