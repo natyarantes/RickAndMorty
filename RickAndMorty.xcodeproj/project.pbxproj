@@ -18,6 +18,9 @@
 		4118204F24D4BB1400A8B214 /* RickAndMortyTabBarContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4118204E24D4BB1400A8B214 /* RickAndMortyTabBarContoller.swift */; };
 		4118205124D4BD4600A8B214 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4118205024D4BD4600A8B214 /* StartViewController.swift */; };
 		413A50F824E08E3C00CFC8AF /* DetailedEpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A50F724E08E3C00CFC8AF /* DetailedEpisodeViewController.swift */; };
+		413A511E24E0DCE200CFC8AF /* CharacterRequestById.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A511D24E0DCE200CFC8AF /* CharacterRequestById.swift */; };
+		413A512024E0F3C500CFC8AF /* ResidentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A511F24E0F3C500CFC8AF /* ResidentCollectionViewCell.swift */; };
+		413A512224E0FC7200CFC8AF /* CharacterOnEpisodeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413A512124E0FC7200CFC8AF /* CharacterOnEpisodeViewCell.swift */; };
 		4148212A24D73C77008E635A /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4148212924D73C77008E635A /* CharacterViewController.swift */; };
 		4148212C24D73C8E008E635A /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4148212B24D73C8E008E635A /* LocationViewController.swift */; };
 		4148212E24D73CA1008E635A /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4148212D24D73CA1008E635A /* EpisodeViewController.swift */; };
@@ -71,6 +74,9 @@
 		4118204E24D4BB1400A8B214 /* RickAndMortyTabBarContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyTabBarContoller.swift; sourceTree = "<group>"; };
 		4118205024D4BD4600A8B214 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		413A50F724E08E3C00CFC8AF /* DetailedEpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedEpisodeViewController.swift; sourceTree = "<group>"; };
+		413A511D24E0DCE200CFC8AF /* CharacterRequestById.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRequestById.swift; sourceTree = "<group>"; };
+		413A511F24E0F3C500CFC8AF /* ResidentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentCollectionViewCell.swift; sourceTree = "<group>"; };
+		413A512124E0FC7200CFC8AF /* CharacterOnEpisodeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterOnEpisodeViewCell.swift; sourceTree = "<group>"; };
 		4148212924D73C77008E635A /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		4148212B24D73C8E008E635A /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		4148212D24D73CA1008E635A /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				413A50F724E08E3C00CFC8AF /* DetailedEpisodeViewController.swift */,
+				413A512124E0FC7200CFC8AF /* CharacterOnEpisodeViewCell.swift */,
 			);
 			path = "Detailed Episode";
 			sourceTree = "<group>";
@@ -244,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				41BBEA0E24E07E3400437F75 /* DetailedLocationViewController.swift */,
+				413A511F24E0F3C500CFC8AF /* ResidentCollectionViewCell.swift */,
 			);
 			path = "Detailed Location";
 			sourceTree = "<group>";
@@ -265,6 +273,7 @@
 				41D77E5724D8A54E00977F77 /* EpisodeRequest.swift */,
 				41D77E5924D8A55600977F77 /* LocationRequest.swift */,
 				41D77E5B24D8A56D00977F77 /* CharacterRequest.swift */,
+				413A511D24E0DCE200CFC8AF /* CharacterRequestById.swift */,
 				41D77E5F24D8AB1300977F77 /* APIInterface.swift */,
 				41D77E5D24D8A7F300977F77 /* APIRequest.swift */,
 				41D77E6824D8BC6400977F77 /* InfoResponse.swift */,
@@ -485,6 +494,7 @@
 				41B5789724DAE8C9006F96DD /* LocationCellViewController.swift in Sources */,
 				41D77E5A24D8A55600977F77 /* LocationRequest.swift in Sources */,
 				41BBE9DF24DC6EF700437F75 /* ProfileViewController.swift in Sources */,
+				413A512224E0FC7200CFC8AF /* CharacterOnEpisodeViewCell.swift in Sources */,
 				41D77E6724D8B51100977F77 /* LocationViewModel.swift in Sources */,
 				41D77E4F24D89D0400977F77 /* Character.swift in Sources */,
 				41B5789924DB4080006F96DD /* EpisodeCellViewController.swift in Sources */,
@@ -498,11 +508,13 @@
 				41BBEA0B24DF622000437F75 /* ProfileCellViewController.swift in Sources */,
 				41D77E4A24D8718B00977F77 /* CharacterCellViewController.swift in Sources */,
 				41D77E6924D8BC6400977F77 /* InfoResponse.swift in Sources */,
+				413A511E24E0DCE200CFC8AF /* CharacterRequestById.swift in Sources */,
 				4148212A24D73C77008E635A /* CharacterViewController.swift in Sources */,
 				41BBEA0D24E06F5000437F75 /* FilterCellViewController.swift in Sources */,
 				4116776A24D4A9D700F1B1DD /* SceneDelegate.swift in Sources */,
 				4148212C24D73C8E008E635A /* LocationViewController.swift in Sources */,
 				41D77E5624D8A52700977F77 /* RickAndMortyAPI.swift in Sources */,
+				413A512024E0F3C500CFC8AF /* ResidentCollectionViewCell.swift in Sources */,
 				41D77E5824D8A54E00977F77 /* EpisodeRequest.swift in Sources */,
 				41D77E6524D8B50200977F77 /* EpisodeViewModel.swift in Sources */,
 				41D77E6324D8B4F600977F77 /* CharacterViewModel.swift in Sources */,
